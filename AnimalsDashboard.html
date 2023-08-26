@@ -24,16 +24,20 @@
         <div id='animal-table'></div>
 
         <script>
-         let tableHTML = '<table>';
+         let tableHTML = '<table>'; // initialization of the tableHTML variable with the let keyword
+         // this cannot be redeclared later.
+
+         // extends the value of tableHTML with the addition assignment operator
          tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th></tr>';
 
+         // rows of the table
          const animals = [
              { id: 1, name: "Fluffy", owner: "Alice", weight: 12, age: 3 },
              { id: 2, name: "Max", owner: "Bob", weight: 20, age: 5 }
          ];
 
-         tableHTML += '</table>';
-         document.getElementById('animal-table').innerHTML = tableHTML;
+         tableHTML += '</table>'; // adding the closing tag for the table tag
+         document.getElementById('animal-table').innerHTML = tableHTML; // adds the values to the div tag in line 24
         </script>
     </body>
 </html>
