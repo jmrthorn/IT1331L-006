@@ -28,31 +28,45 @@
          // this cannot be redeclared later.
 
          // extends the value of tableHTML with the addition assignment operator
-         tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th></tr>';
+         tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th><th>Age Bracket</th></tr>';
 
          // rows of the table
          const animals = [
              { id: 1, name: "Fluffy", owner: "Alice", weight: 12, age: 3 },
              { id: 2, name: "Max", owner: "Bob", weight: 20, age: 5 },
              { id: 3, name: "Sven", owner: "Rick", weight: 15, age: 8 },
-             { id: 3, name: "Brownie", owner: "Anne", weight: 10, age: 6 },
-             { id: 4, name: "Floopy", owner: "Jane", weight: 19, age: 0.9 },
-             { id: 5, name: "Minx", owner: "Jessica", weight: 20, age: 0.2 },
-             { id: 6, name: "Archie", owner: "Morty", weight: 15, age: 0.5 },
-             { id: 7, name: "Bjorn", owner: "Steve", weight: 10, age: 0.6 },
-             { id: 8, name: "Buttercup", owner: "Jamie", weight: 19, age: 10.1 },
-             { id: 9, name: "Mildred", owner: "John", weight: 20, age: 11 },
-             { id: 10, name: "Blossom", owner: "Michael", weight: 15, age: 14 },
-             { id: 11, name: "Shine", owner: "Ron", weight: 10, age: 12 },
-             { id: 8, name: "Drax", owner: "Kyle", weight: 19, age: 16 },
-             { id: 9, name: "Colonel", owner: "Sam", weight: 20, age: 18 },
-             { id: 10, name: "Blizz", owner: "Madison", weight: 15, age: 22 },
-             { id: 11, name: "Shadow", owner: "Rachel", weight: 10, age: 18 },
-
+             { id: 4, name: "Brownie", owner: "Anne", weight: 10, age: 6 },
+             { id: 5, name: "Floopy", owner: "Jane", weight: 19, age: 0.9 },
+             { id: 6, name: "Minx", owner: "Jessica", weight: 20, age: 0.2 },
+             { id: 7, name: "Archie", owner: "Morty", weight: 15, age: 0.5 },
+             { id: 8, name: "Bjorn", owner: "Steve", weight: 10, age: 0.6 },
+             { id: 9, name: "Buttercup", owner: "Jamie", weight: 19, age: 10.1 },
+             { id: 10, name: "Mildred", owner: "John", weight: 20, age: 11 },
+             { id: 11, name: "Blossom", owner: "Michael", weight: 15, age: 14 },
+             { id: 12, name: "Shine", owner: "Ron", weight: 10, age: 12 },
+             { id: 13, name: "Drax", owner: "Kyle", weight: 19, age: 16 },
+             { id: 14, name: "Colonel", owner: "Sam", weight: 20, age: 18 },
+             { id: 15, name: "Blizz", owner: "Madison", weight: 15, age: 22 },
+             { id: 16, name: "Shadow", owner: "Rachel", weight: 10, age: 18 },
          ];
 
+         // function to determine the age bracket of the animal
+         function getAgeBracket(age) {
+             if (age <= 0.9) {
+                 return "Puppy";
+             } else if (age >= 0.91 && age <= 10) {
+                 return "Adult";
+             } else if (age >= 10.1 && age <= 15) {
+                 return "Senior";
+             } else {
+                 return "Geriatric";
+             }
+
+         }
+
+         // for loop that adds values to the table
          for (const animal of animals) {
-             tableHTML += `<tr><th>${animal.id}</th><th>${animal.name}</th><th>${animal.owner}</th><th>${animal.weight}</th><th>${animal.age}</th></tr>`;
+             tableHTML += `<tr><th>${animal.id}</th><th>${animal.name}</th><th>${animal.owner}</th><th>${animal.weight}</th><th>${animal.age}</th><th>${getAgeBracket(animal.age)}</th></tr>`;
          }
 
          tableHTML += '</table>'; // adding the closing tag for the table tag
