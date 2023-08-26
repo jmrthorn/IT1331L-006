@@ -51,6 +51,10 @@
 
          ];
 
+         for (const animal of animals) {
+             tableHTML += `<tr><th>${animal.id}</th><th>${animal.name}</th><th>${animal.owner}</th><th>${animal.weight}</th><th>${animal.age}</th></tr>`;
+         }
+
          tableHTML += '</table>'; // adding the closing tag for the table tag
          document.getElementById('animal-table').innerHTML = tableHTML; // adds the values to the div tag in line 24
         </script>
